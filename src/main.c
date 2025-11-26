@@ -10,6 +10,7 @@ int main() {
         t->tm_mon + 1,
         t->tm_year + 1900
     );
-
+    location();
     return 0;
 }
+
