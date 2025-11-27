@@ -9,17 +9,22 @@ add the date into the moon phase function.
 
 create a function to get the moon phase based off the date.
 
-4. Ask the user to enter the AQI
+4.ask the user for location
+
+read location 
+display possible stars/constellations seen from that hemisphere
+
+5. Ask the user to enter the AQI
 
 Read AQI from the user.
 
-5. Determine visibility
+6. Determine visibility
 
-Use moon phase(illumination factor) and AQI to compute a visibility.
+Use location, moon phase(illumination factor) and AQI to compute a visibility.
 
 Decide which constellations can be seen under these conditions.
 
-6. Display results
+7. Display results
 
 Show moon phase.
 

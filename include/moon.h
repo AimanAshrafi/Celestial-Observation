@@ -1,4 +1,4 @@
 
 
-int calculate_moon_phase(int day, int month, int year);
+int calculateMoonPhase(int day, int month, int year);
 
