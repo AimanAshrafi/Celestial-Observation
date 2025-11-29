@@ -11,6 +11,9 @@ int daysSinceBirthday(int d, int m, int y);
 {
     int totalDays = 0;
     int i;
+        // Days in each month (non-leap year)
+    int monthDays[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
         // Counting whole years passed since 2006
     for(i = 2006; i < y; i++) 
     {
