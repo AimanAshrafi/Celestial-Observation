@@ -90,6 +90,43 @@ void location() {
         printf("\nInvalid input — try again later.\n");
     }
 }
+void visibility_with_AQI(int hemisphere, int moonAge, int aqi) {
+
+    int brightnessLimit;
+
+    printf("\n🌙 Moon Phase Influence\n");
+
+    if(moonAge<=1)         { brightnessLimit=4; printf("New moon - sky dark, deep stars visible.\n"); }
+    else if(moonAge<=6)    { brightnessLimit=4; printf("Waxing Crescent - most stars visible.\n"); }
+    else if(moonAge<=8)    { brightnessLimit=3; printf("First Quarter - some faint stars dim.\n"); }
+    else if(moonAge<=13)   { brightnessLimit=3; printf("Waxing Gibbous - visibility still strong.\n"); }
+    else if(moonAge<=16)   { brightnessLimit=2; printf("Full Moon - only brighter stars stand out.\n"); }
+    else if(moonAge<=21)   { brightnessLimit=3; printf("Waning Gibbous - stars slowly return.\n"); }
+    else if(moonAge<=23)   { brightnessLimit=4; printf("Last Quarter - good visibility returns.\n"); }
+    else                   { brightnessLimit=4; printf("Waning Crescent - sky darkens beautifully.\n"); }
+
+    
+    if(aqi<=50)       brightnessLimit = brightnessLimit;   // no reduction
+    else if(aqi<=100) brightnessLimit = brightnessLimit>3?3:brightnessLimit;
+    else if(aqi<=200) brightnessLimit = 2;
+    else              brightnessLimit = 1;
+
+    printf("\n✨ Visible Constellations Tonight:\n");
+
+    if(hemisphere==1) {
+        for(int i=0;i<10;i++)
+            if(northBrightness[i]<=brightnessLimit)
+                printf("- %s\n", northStars[i]);
+    }
+    else if(hemisphere==2) {
+        for(int i=0;i<9;i++)
+            if(southBrightness[i]<=brightnessLimit)
+                printf("- %s\n", southStars[i]);
+    }
+
+    printf("\n🌫 AQI: %d → Visibility Threshold ≤ %d\n",aqi,brightnessLimit);
+}
+
 
 
 

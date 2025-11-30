@@ -19,6 +19,17 @@ int main() {
     int year  = t->tm_year + 1900;
 
     location();
+    int moonAge = calculateMoonPhase(day,month,year);
+
+    int hemisphere_choice;
+    printf("\nEnter 1 for Northern / 2 for Southern again to calculate visibility: ");
+    scanf("%d",&hemisphere_choice);
+
+     int aqi;
+     printf("\nEnter AQI at your location: ");
+     scanf("%d",&aqi);
+
+     visibility_with_AQI(hemisphere_choice, moonAge, aqi);
 
     
     
