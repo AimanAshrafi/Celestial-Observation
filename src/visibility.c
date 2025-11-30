@@ -92,7 +92,7 @@ void location() {
 }
 void visibility_with_AQI(int hemisphere, int moonAge, int aqi) {
 
-    int brightnessLimit;
+    int brightnessLimit,i;
 
     printf("\n🌙 Moon Phase Influence\n");
 
@@ -114,14 +114,12 @@ void visibility_with_AQI(int hemisphere, int moonAge, int aqi) {
     printf("\n✨ Visible Constellations Tonight:\n");
 
     if(hemisphere==1) {
-        for(int i=0;i<10;i++)
-            if(northBrightness[i]<=brightnessLimit)
-                printf("- %s\n", northStars[i]);
+        for(i=0;i<10;i++)
+            if(northBrightness[i]<=brightnessLimit) printf("- %s\n", northern_stars[i]);
     }
     else if(hemisphere==2) {
-        for(int i=0;i<9;i++)
-            if(southBrightness[i]<=brightnessLimit)
-                printf("- %s\n", southStars[i]);
+        for(i=0;i<9;i++)
+            if(southBrightness[i]<=brightnessLimit) printf("- %s\n", southern_stars[i]);
     }
 
     printf("\n🌫 AQI: %d → Visibility Threshold ≤ %d\n",aqi,brightnessLimit);

@@ -1,1 +1,3 @@
-int calculate_visibility(int moon_phase, int aqi);
+void location();  // your hemisphere chooser
+void visibility_with_AQI(int hemisphere, int moonAge, int aqi);
+
