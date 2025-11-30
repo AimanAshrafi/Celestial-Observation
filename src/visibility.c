@@ -25,6 +25,42 @@
     "Alpha Centauri",
     "Jewel Box Cluster"
 };
+ char *northStars[] = {
+    "Orion", "Ursa Major", "Cassiopeia", "Andromeda",
+    "Taurus", "Ursa Minor", "Pegasus", "Carina",
+    "Draco", "Pleiades"
+};
+
+// Brightness ranking (1 = brightest, 4 = faint)
+int northBrightness[] = {
+    1, // Orion
+    2, // Ursa Major
+    2, // Cassiopeia
+    3, // Andromeda
+    2, // Taurus (Aldebaran bright, cluster moderately bright)
+    3, // Ursa Minor (Polaris bright but surrounding faint)
+    3, // Pegasus
+    2, // Carina (bright when visible)
+    3, // Draco
+    2  // Pleiades (cluster visible in dark sky)
+};
+char *southStars[] = {
+    "Crux", "Centaurus", "Sagittarius", "Scorpius",
+    "Canopus", "Sirius", "Carina", "Vela", "Hydra"
+};
+
+int southBrightness[] = {
+    2, // Crux (Southern Cross, small but bright)
+    2, // Centaurus (Alpha + Beta bright)
+    2, // Sagittarius (dense region, Milky Way core)
+    2, // Scorpius (Antares bright)
+    1, // Canopus (2nd brightest star in sky)
+    1, // Sirius (brightest star in sky)
+    2, // Carina (partially bright)
+    2, // Vela
+    3  // Hydra (larger but moderately faint)
+};
+
 void location() {
     int choice;
     int i;
