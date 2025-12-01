@@ -111,18 +111,11 @@ Program returns visible constellations & moon-sky description
 
 
 # 🌌 Example Output
-Today is: 01-12-2025
+<p align="center">
+  <img src="assets/output.png" width="900">
+</p>
 
-✦ MOON PHASE INFLUENCE
-Waning Crescent — the sky deepens, the night exhales.
 
-✦ Visible Constellations Tonight ✦
-★ Crux
-★ Canopus
-★ Sirius
-
-Night settles.
-Stars that endure reveal themselves.
 
 
 # 🔭 Future Add-Ons
