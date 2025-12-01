@@ -25,7 +25,7 @@ Adjusts visibility based on brightness + AQI
 Gives atmospheric output instead of dry numbers the program responds in a way that feels like stargazing
 
 
-#How to Run:
+# How to Run:
 
 1.Open terminal inside project root
 
