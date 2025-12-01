@@ -7,12 +7,15 @@
     "Cassiopeia",
     "Perseus",
     "Gemini",
-    "Leo",
     "Ursa Minor",
     "Pegasus",
     "Draco",
     "Pleiades (Star Cluster)",
     "Polaris (North Star)"
+};
+// Brightness ranking corresponding to above (1 = brightest, 4 = faint)
+int northBrightness[] = {
+    1,2,2,3,2,3,3,3,2,2
 };
  char* southern_stars[] = {
     "Crux (Southern Cross)",
@@ -25,41 +28,9 @@
     "Alpha Centauri",
     "Jewel Box Cluster"
 };
- char *northStars[] = {
-    "Orion", "Ursa Major", "Cassiopeia", "Andromeda",
-    "Taurus", "Ursa Minor", "Pegasus", "Carina",
-    "Draco", "Pleiades"
-};
-
-// Brightness ranking (1 = brightest, 4 = faint)
-int northBrightness[] = {
-    1, // Orion
-    2, // Ursa Major
-    2, // Cassiopeia
-    3, // Andromeda
-    2, // Taurus (Aldebaran bright, cluster moderately bright)
-    3, // Ursa Minor (Polaris bright but surrounding faint)
-    3, // Pegasus
-    2, // Carina (bright when visible)
-    3, // Draco
-    2  // Pleiades (cluster visible in dark sky)
-};
-char *southStars[] = {
-    "Crux", "Centaurus", "Sagittarius", "Scorpius",
-    "Canopus", "Sirius", "Carina", "Vela", "Hydra"
-};
-
 int southBrightness[] = {
-    2, // Crux (Southern Cross, small but bright)
-    2, // Centaurus (Alpha + Beta bright)
-    2, // Sagittarius (dense region, Milky Way core)
-    2, // Scorpius (Antares bright)
-    1, // Canopus (2nd brightest star in sky)
-    1, // Sirius (brightest star in sky)
-    2, // Carina (partially bright)
-    2, // Vela
-    3  // Hydra (larger but moderately faint)
-};
+    2,2,2,2,1,1,2,2,3
+}; 
 
 void location() {
     int choice;
@@ -94,7 +65,7 @@ void visibility_with_AQI(int hemisphere, int moonAge, int aqi) {
 
     int brightnessLimit,i;
 
-    printf("\n🌙 Moon Phase Influence\n");
+    printf("\n Moon Phase Influence\n");
 
     if(moonAge<=1)         { brightnessLimit=4; printf("New moon - sky dark, deep stars visible.\n"); }
     else if(moonAge<=6)    { brightnessLimit=4; printf("Waxing Crescent - most stars visible.\n"); }
@@ -111,18 +82,21 @@ void visibility_with_AQI(int hemisphere, int moonAge, int aqi) {
     else if(aqi<=200) brightnessLimit = 2;
     else              brightnessLimit = 1;
 
-    printf("\n✨ Visible Constellations Tonight:\n");
+    printf("\n Visible Constellations Tonight:\n");
 
     if(hemisphere==1) {
         for(i=0;i<10;i++)
-            if(northBrightness[i]<=brightnessLimit) printf("- %s\n", northern_stars[i]);
+            if(northBrightness[i]<=brightnessLimit) 
+              printf("- %s\n", northern_stars[i]);
     }
     else if(hemisphere==2) {
         for(i=0;i<9;i++)
-            if(southBrightness[i]<=brightnessLimit) printf("- %s\n", southern_stars[i]);
+            if(southBrightness[i]<=brightnessLimit) 
+              printf("- %s\n", southern_stars[i]);
     }
 
-    printf("\n🌫 AQI: %d → Visibility Threshold ≤ %d\n",aqi,brightnessLimit);
+    printf("\n AQI: %d → Visibility Threshold ≤ %d\n",aqi,brightnessLimit);
+    printf("───────────────────────────────────────────\n\n");
 }
 
 
