@@ -1,35 +1,31 @@
-1. Start
-2. Get current date from the system
+start
+→ Step 1: Fetch today’s date.
+       - Extract day, month and year using C time functions.
 
-Extract day, month, and year.
+→ Step 2: Calculate moon age.
+       - Use my birthday (24/09/2006) as reference.
+       - Count total days passed since that date.
+       - Reduce using %29.5 to fit within one lunar cycle.
+       - Result = moonAge (0–29)
 
-3. Calculate moon phase
+→ Step 3: Ask user for hemisphere.
+       - Northern or Southern — both give very different skies.
 
-add the date into the moon phase function.
+→ Step 4: Select star list + brightness map.
+       - Northern Sky → Orion, Perseus, Gemini, Draco, Polaris…
+       - Southern Sky → Crux, Centaurus, Sirius, Canopus, etc.
+       - Each star also has brightness ranking (1–4).
 
-create a function to get the moon phase based off the date.
+→ Step 5: Adjust visibility using moonAge.
+       - Closer to New Moon → darker skies → more stars visible.
+       - Closer to Full Moon → faint stars hide.
 
-4.ask the user for location
+→ Step 6: Take AQI input.
+       - Low AQI = clearer atmosphere.
+       - Bad AQI cuts visibility of faint stars even further.
 
-read location 
-display possible stars/constellations seen from that hemisphere
-
-5. Ask the user to enter the AQI
-
-Read AQI from the user.
-
-6. Determine visibility
-
-Use location, moon phase(illumination factor) and AQI to compute a visibility.
-
-Decide which constellations can be seen under these conditions.
-
-7. Display results
-
-Show moon phase.
-
-Show visibility level.
-
-Show list of visible constellations.
-
-7. End
+→ Step 7: Display final output.
+       - Poetic line about current moon phase.
+       - List stars visible tonight.
+       
+end.
