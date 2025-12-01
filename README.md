@@ -1,7 +1,18 @@
 SAPID-590026933
-# Celestial Observation
+# Celestial Observation🌙
+
+This project calculates the moon’s phase for the current date and predicts constellation visibility based on the user location, lunar brightness and user-entered AQI.
 
 
-This project calculates the moon’s phase for the current date and predicts constellation visibility based on the user location, lunar brightness and user-entered AQI. The repository follows the required src, include, and docs structure for evaluation.
-# Celestial-Observation
-A C-based program that displays the moon phase and predicts the possible visible constellations that survived the nights noise using simple environmental factors such as  AQI and lunar illumination
+
+
+Factor	Influence
+
+Hemisphere	Controls which constellations are visible
+Moon Phase	Brighter moon → fewer visible stars
+Air Quality Index (AQI)	More pollution → faint stars disappear
+
+
+
+
+

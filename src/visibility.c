@@ -82,21 +82,21 @@ void visibility_with_AQI(int hemisphere, int moonAge, int aqi) {
     else if(aqi<=200) brightnessLimit = 2;
     else              brightnessLimit = 1;
 
-    printf("\n Visible Constellations Tonight:\n");
+    printf("\n ✦Visible Constellations Tonight✦\n");
 
     if(hemisphere==1) {
         for(i=0;i<10;i++)
             if(northBrightness[i]<=brightnessLimit) 
-              printf("- %s\n", northern_stars[i]);
+              printf("★ %s\n", northern_stars[i]);
     }
     else if(hemisphere==2) {
         for(i=0;i<9;i++)
             if(southBrightness[i]<=brightnessLimit) 
-              printf("- %s\n", southern_stars[i]);
+              printf("★ %s\n", southern_stars[i]);
     }
 
-    printf("\n AQI: %d → Visibility Threshold ≤ %d\n",aqi,brightnessLimit);
-    printf("───────────────────────────────────────────\n\n");
+    printf("\nNight settles.\nStars that endure, reveal themselves.\n");
+    
 }
 
 
